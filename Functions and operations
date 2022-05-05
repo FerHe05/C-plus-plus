@@ -1,0 +1,55 @@
+#include <iostream>
+#include <locale.h>
+
+void Message() {
+	std::cout << "Hello World! What's up?" << "\n\n";
+}
+float SomaUmNumero() {
+	int x;
+	for (x = 1; x <= 2; x++) {
+		float Num1, Num2, Soma = 0.0;
+		std::cout << "Digite um número: " << "\n";
+		std::cin >> Num1;
+		std::cout << "\nDigite um segundo número: " << "\n";
+		std::cin >> Num2;
+		Soma = Num1 + Num2;
+		std::cout << "\nA soma dos dois números é: " << Soma << "\n";
+		std::cout << "************************ " << "\n";
+	}
+	return 0;
+}
+int Calculator(){
+	float Number1,Number2 ;
+	char Operacao;
+	std::cout << "Vamos Calcular! " << "\n";
+	std::cout << "Digite um Número: " << "\n";
+	std::cin >> Number1;
+	std::cout << "Digite outro Número: " << "\n";
+	std::cin >> Number2;
+	std::cout << "Digite a operação desejada: " << "\n";
+	std::cout << " + = Soma" << "\n" << " - = Subtração" << "\n" << " * = Multiplicação" << "\n" << " / = Divisão" << "\n";
+	std::cin >> Operacao;
+
+	switch (Operacao)
+	{
+	case '+':std::cout << "O resultado da soma é: " << "\n" << Number1 + Number2 << "\n";
+		break;
+	case '-': std::cout << "O resultado da subtração é: " << "\n" << Number1 - Number2 << "\n";
+		break;
+	case '*': std::cout << "O resultado da multiplicação é: " << "\n" << Number1 * Number2 << "\n";
+		break;
+	case '/': std::cout << "O resultado da divisão é: " << "\n" << Number1 / Number2 << "\n";
+		break;
+	default: std::cout << "Digite um valor válido!" << "\n";
+		
+	}
+	return 0;
+}
+int main(){
+	setlocale(LC_ALL, "portuguese");
+	Message();
+	SomaUmNumero();
+	Calculator();
+	system("pause");
+	return 0;
+}
