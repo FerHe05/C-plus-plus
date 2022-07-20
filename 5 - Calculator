@@ -1,0 +1,48 @@
+#include <iostream>
+#include <tchar.h>
+int main()
+{
+	_tsetlocale(LC_ALL, _T("portuguese"));
+	int Num1 , Num2;
+	char Operação;
+	std::cout << ("Digite um Número: ");
+	std::cin >> Num1;
+	std::cout << ("Digite outro Número: ");
+	std::cin >> Num2;
+	std::cout << "\nQual Operação Deseja Efetuar? \n+Adição \n-Subtração \n*Multiplicação ou \n/Divisão?";
+	std::cout << "\nDigite sua Opção:";
+	std::cin >> Operação;
+
+	//Usuario vai digitar um caracter. Como um caracter é mapeado
+	//como inteiro da tabela ascii o switch nesse tipo de expressao
+	//Assim (Operação) pode ser (+ - * /)
+	switch (Operação)
+	{
+	//Caso seja + esta linha será executada
+	case '+':
+		std::cout << "\nSoma de Num1 + Num2 = " << Num1 + Num2;
+		break;
+		//Caso seja - esta linha será executada
+
+	case '-':
+		std::cout << "\nSubtração de Num1 - Num2 = " << Num1 - Num2;
+		break;
+		//Caso seja * esta linha será executada
+
+	case '*':
+		std::cout << "\nMultiplicação de Num1 * Num2 = " << Num1 * Num2;
+		break;
+		//Caso seja / esta linha será executada
+	case '/':
+		std::cout << "\nDivisão de Num1 / Num2 = " << Num1 / Num2;
+		break;
+	//caso o operador não tenha nenhum valor das mesmas o (default)
+	//será ativado
+	default:
+		std::cout << "\nVocê não Digitou um Operador Valido! ";
+		break;
+	}
+	std::cout << "\n";
+	system("pause");
+}
+
