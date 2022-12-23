@@ -1,0 +1,29 @@
+// declaring functions prototypes
+#include <iostream>
+using namespace std;
+
+void odd (int x);//Declaração
+void even (int x);
+
+int main()
+{
+  int i;
+  do {
+    cout << "Please, enter number (0 to exit): ";
+    cin >> i;//Recebimento de valor
+    odd (i);// declaração de numeor impar
+  } while (i!=0);
+  return 0;
+}
+
+void odd (int x)
+{
+  if ((x%2)!=0) cout << "It is odd.\n";//se o valor não for divisivel por 2 
+  else even (x);//é par
+}
+
+void even (int x)
+{
+  if ((x%2)==0) cout << "It is even.\n";//se o valor for divisivel por 2 
+  else odd (x);//se não é impar
+}
