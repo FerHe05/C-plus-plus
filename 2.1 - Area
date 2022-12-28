@@ -1,0 +1,21 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+float area() {
+	float n, R;
+	n = 3.14159;
+	cin >> R;
+	R = pow(R, 2);//R = (R * R);
+	
+	float A = n*R;
+	cout << "A=";
+	printf("%.4f", A);
+
+	return A;
+}
+
+int main() {
+	area();
+	return 0;
+}
