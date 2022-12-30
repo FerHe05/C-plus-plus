@@ -11,9 +11,8 @@ void ascii() {
 		if (i % 10 == 0) {
 			cout << "\n";
 		}
-		printf("%d = %c\t", i, i);//saida usada em C			
+	printf("%d = %c\t", i, i);//saida usada em C			
 	}
-	
 }
 int main()
 {
