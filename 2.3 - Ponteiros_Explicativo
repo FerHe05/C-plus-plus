@@ -1,0 +1,57 @@
+#include "iostream"
+using namespace std;
+
+
+int main() {
+	system("color 2");//mudar as letras de cor
+	setlocale(LC_ALL, "portuguese");
+	string Mensagem = "Você me achou ";
+	int Numero1 = 10;
+	float Numero2 = 12;
+	double Numero3 = 14;
+	char A;
+  
+//Tamanho dos tipos de dados na memória
+
+	cout << "Tamanho da variavel Mensagem (string): " << sizeof(Mensagem) << " bytes" ;
+	cout << "\n";
+	cout << "Tamanho da variavel Número1 (integer): " << sizeof(Numero1) << " bytes";
+	cout << "\n";
+	cout << "Tamanho da variavel Número2 (float): " << sizeof(Numero2) << " bytes";
+	cout << "\n";
+	cout << "Tamanho da variavel Número3 (double): " << sizeof(Numero3) << " bytes";
+	cout << "\n";
+	cout << "Tamanho da variavel A (char): " << sizeof(A) << " bytes";
+	cout << "\n \n";
+
+	cout << "****************Ponteiros****************" << "\n\n";
+
+	/* & (Lê-se, E - comercial, é um operador reponsável por localizar o endereço de memória da variavel.) Exemplo: */
+
+	cout << "Local na memória onde está a variável mensagem: " << &Mensagem;
+	cout << "\n";
+	cout << "Local na memória onde está a variável Numero1: " << &Numero1;
+	cout << "\n";
+	cout << "Local na memória onde está a variável Numero2: " << &Numero2;
+	cout << "\n";
+	cout << "Local na memória onde está a variável Numero3: " << &Numero3;
+	cout << "\n \n";
+
+	cout << "****************Variavel Ponteiro****************" << "\n\n";
+
+	//Iniciando ponteiro, para evitar lixo de memoria sempre iniciar a variavel ponteiro.
+	//int* Ponteiro{ nullptr };
+	int Numero4 = 100;
+	int* Ponteiro = &Numero4;// cria uma variavel na memoria do tipo ponteiro
+	
+	Ponteiro = &Numero4; //O ponteiro vai receber o local da variavel Numero4
+	cout << Ponteiro;
+	//No caso: 0000006D2CCFF9C4
+	//a partir do apontamento posso provocar um DESREVERENCIAMENTO DE PONTEIRO, onde troco o valor de Numero4 alocado na memoria.
+	*Ponteiro = 120;
+	cout << "\n";
+	cout << *Ponteiro;
+	//Agora meu valor de Numero4 mudou.
+	cout << "\n";
+	cout << Numero4;
+}
