@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+// Base class(parent)
+
+class Vehicle {
+public:
+    string brand = "Ford";
+    void honk() {
+        cout << "Tuut, tuut! \n";
+    }
+};
+
+// Derived class(child)
+class Car : public Vehicle {//recebe os parâmeros da classe pai
+public:
+    string model = "Mustang";
+};
+
+int main() {
+    Car myCar;//cria objeto
+    myCar.honk();//acessa o atributo e chama a função 
+    cout << myCar.brand + " " + myCar.model;
+    return 0;
+}
