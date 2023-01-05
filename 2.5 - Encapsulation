@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+//-----------Encapsulamento------------
+
+class Employee {
+private:
+    // Private attribute
+    int salary;
+
+public:
+    // Setter
+    void setSalary(int s) {//seta o valor em salary 
+        salary = s;
+    }
+    // Getter
+    int getSalary() {//recebe o valor salary retornando ao mesmo
+        return salary;
+    }
+};
+
+int main() {
+    Employee myObj;//cria o objeto
+    myObj.setSalary(123456);//seta o valor
+    cout << myObj.getSalary();//exibe o valor
+    return 0;
+}
+
+//Why encapsulation?
+//Increased security of data
+//Good practice to declare your class attributes as private. 
+//Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts
