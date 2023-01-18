@@ -10,3 +10,10 @@ int main() {
     t.join();             // espera até que o thread termine
     return 0;
 }
+
+/*
+  Neste exemplo, a função main cria um novo thread que executa a função func. 
+O método join é chamado na thread principal para esperar até que o thread criado termine antes de terminar o programa.
+  Além de criar e gerenciar threads, a biblioteca thread também fornece vários outros recursos, como mutexes e variáveis de condição, que podem ser usados
+para sincronizar e gerenciar acesso compartilhado a recursos.
+*/
