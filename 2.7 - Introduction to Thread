@@ -1,0 +1,12 @@
+#include <iostream>
+#include <thread>
+
+void func() {
+    std::cout << "Thread funcionando!" << std::endl;
+}
+
+int main() {
+    std::thread t(func);  // cria um novo thread que executa a função func
+    t.join();             // espera até que o thread termine
+    return 0;
+}
