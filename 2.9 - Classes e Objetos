@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+class Circulo {
+private:
+    double raio;//cria uma variável de modo privado
+
+public:
+    double setRaio(double r) { //cria uma função double com uma variável r que receberá o valor do raio
+        cin >> r;
+        raio = r;
+        return raio;
+    }
+
+    double calcularArea() {//cria uma finção que calcula o a área
+        return 3.14159 * raio * raio;
+    }
+};
+
+int main() {
+
+    setlocale(LC_ALL, "portuguese");//add caracteres em pt-br
+
+    Circulo meuCirculo;  // Criando um objeto da classe Circulo
+
+    meuCirculo.setRaio(0);  // Configurando o raio do círculo
+
+    double area = meuCirculo.calcularArea();  // Calculando a área do círculo
+
+    cout << "A área do círculo é: " << area <<  "\n";
+
+    return 0;
+}
