@@ -1,0 +1,70 @@
+#include "Conta.h"
+#include <iostream>
+#include <string>
+
+
+bool Conta::Sacar(double Valor) {
+    if (Saldo < Valor) {
+        cout << "Saldo Insuficiente! \n";
+        cout << "Seu saldo atual: R$" << ConsultarSaldo() << "\n";
+        return false;
+    }
+    else {
+        Saldo = Saldo - Valor;
+        cout << "Seu saldo atual: R$" << ConsultarSaldo() << "\n";
+        return true;
+    }
+}
+void Conta::Depositar(double Valor) {
+    Saldo += Valor;
+    cout << "\nDeposito de R$ " << Valor << " Efetuado com sucesso! \n";
+}
+void Conta::Transferir(Conta &Destino, double Valor) {
+    if (Saldo < Valor) {
+        cout << "Saldo insuficiente! \n";
+    }
+    else {
+        Destino.Depositar(Valor);
+        Saldo -= Valor;
+        cout << "\n Dados \n";
+        cout << "Titular: " << Destino.GetTitular() << "\n";
+        cout << "Banco: " << Destino.GetBanco() << "\n";
+        cout << "Agencia: " << Destino.GetAgencia() << "\n";
+        cout << "Conta: " << Destino.GetNumConta() << "\n";
+        cout << "Tranferencia realizada com sucesso!\n";
+        cout << "Seu saldo atual: R$ " << ConsultarSaldo() << "\n";
+    }
+}
+double Conta::ConsultarSaldo() {
+    return Saldo;
+}
+string Conta::GetBanco() {
+    return Banco;
+}
+
+int Conta::GetAgencia() {
+    return Agencia;
+}
+
+int Conta::GetNumConta()
+{
+    return NumConta;
+}
+
+string Conta::GetTitular() {
+    return Titular;
+}
+
+void Conta::SetBanco(string Banco) {
+    this->Banco = Banco;
+}
+
+void Conta::SetAgencia(int Agencia) {
+    this->Agencia = Agencia;
+}
+void Conta::SetNumConta(int NumConta) {
+    this->NumConta = NumConta;
+}
+void Conta::SetTitular(string Titular) {
+    this->Titular = Titular;
+}

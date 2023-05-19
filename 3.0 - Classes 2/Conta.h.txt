@@ -1,0 +1,34 @@
+#pragma once
+#include <iostream>
+
+using namespace std;
+
+//arquivo .h (header), é onde existem apenas as declarações dos atributos e métodos
+// da classe. Aqui não existem as definições e implementações das funções
+//isso sera feito no arquivo .cpp
+
+class Conta {
+private:
+
+	string Banco;
+	int Agencia;
+	int NumConta;
+	string Titular;
+	double Saldo{0.0};
+
+public:
+
+	bool Sacar(double Valor);
+	void Depositar(double Valor);
+	void Transferir(Conta &Destino, double Valor);
+	double ConsultarSaldo();
+	string GetBanco();
+	int GetAgencia();
+	int GetNumConta();
+	string GetTitular();
+	void SetBanco(string Banco);
+	void SetAgencia(int Agencia);
+	void SetTitular(string Titular);
+	void SetNumConta(int SetNumConta);
+
+};
