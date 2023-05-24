@@ -1,0 +1,40 @@
+#include "Conta.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+//Ponteiro this
+/*
+É um ponteiro constante que contém o endereço de memória do objeto atual
+Todo objeto em C++ tem acesso à seu endereço graças à esse ponteiro
+*/
+
+class Exemplo {
+private:
+	int valor;
+
+public:
+	void setValor(int valor) {
+		this->valor = valor; // Usando o ponteiro this para acessar a variável de membro
+	}
+
+	void exibirValor() {
+		std::cout << "O valor é: " << this->valor << std::endl; // Usando o ponteiro this para acessar a variável de membro
+	}
+};
+
+int main() {
+
+		Exemplo obj;
+		obj.setValor(42);
+		obj.exibirValor();
+
+	system("PAUSE");
+	return 0;
+}
+
+/*Neste exemplo, a classe Exemplo possui uma variável de membro chamada valor. No método setValor, 
+usamos o ponteiro this para atribuir o valor passado como argumento para a variável de membro valor.
+No método exibirValor, usamos novamente o ponteiro this para imprimir o valor da variável de membro valor.*/
