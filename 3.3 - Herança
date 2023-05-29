@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+
+class Somar_Base {
+public:
+
+	//Aqui indica que os membros da seção privada só serão acessíveis dentro do código da classe. 
+	//O objeto não poderá acessar diretamente estes itens atributos e funções
+	void SolicitarNumeros()
+	{
+		std::cout << "Num1: ";
+		std::cin >> Num1;
+		std::cout << "Num2: ";
+		std::cin >> Num2;
+		//Chamada do método privado da classe dentro da própria classe o que é permitido
+		/*Ou seja não é necessário ter todos os metodos públicos. 
+		Neste caso apenas SolicitarNumeros é público e isso basta, 
+		pois este método irá chamar os demais métodos privados da classe*/
+		MostrarResultado(Num1, Num2);
+	}
+
+private:
+	float Num1, Num2;
+	float Soma(int Num1, int Num2)
+	{
+		return (Num1 + Num2);
+	}
+
+	//Veja que este método só poderá ser chamado(invocado) dentro do c´pdigo da classe
+	void MostrarResultado(int Num1, int Num2)
+	{
+		std::cout << "Soma de: " << Num1 << " + " << Num2 << " = " << Soma(Num1, Num2) << "\n";
+	}
+	
+};
+
+class Somar_SubClasse : public Somar_Base {
+public:
+	void Mensagem() {
+		cout << "Aqui posso manipular minha subclasse, herdando as propriedades da minha classe base.\nIsso economiza codigo e outras funçoes" << "\n";
+	}
+
+};
+
+
+int main() {
+	Somar_SubClasse Obj;//definindo o objeto
+	Obj.SolicitarNumeros();
+	Obj.Mensagem();
+	system("PAUSE");
+	return 0;
+}
+
