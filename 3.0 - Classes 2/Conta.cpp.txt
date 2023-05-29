@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 
-
+//Aqui o operador escopo:: está indicando que a função/Método sacar pertence a classe 
+//Conta e que este código a seguir vai implementar a função Sacar.
 bool Conta::Sacar(double Valor) {
     if (Saldo < Valor) {
         cout << "Saldo Insuficiente! \n";
