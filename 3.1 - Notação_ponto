@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+class Casa {
+private:
+	int NumQuartos{4};
+	float Tamanho{90.f};
+	bool bTemSuite{true};
+public:
+	void MostrarTamanho();
+	int ObtenhaNumeroDeQuartos();
+	bool TemSuite();
+	void SetNumQuartos(int Num);
+};
+
+
+int main() {
+	Casa CasaDePraia;
+	CasaDePraia.MostrarTamanho();//notação ponto, faz o acesso de atributos (objetos) que estão dentro da classe.
+	CasaDePraia.SetNumQuartos(6);
+	cout << "\nNum Quartos " << CasaDePraia.ObtenhaNumeroDeQuartos();//Imprimindo e acessando os membros da classe via notação ponto.
+	cout << "\nTem Suite : " << CasaDePraia.TemSuite() ? std::cout << "Sim": std::cout << "Não" << "\n";
+	//Para acessar os membros da classe Casa usamos neste caso a notação ponto.
+  //NomedoObjeto.NomeDoAtributo ou NomeDoObjeto.NomeDoMetodo ou função
+	return 0;
+
+}
+
+void Casa::MostrarTamanho()
+{
+	cout << "\nTamanho " << Tamanho;
+
+}
+
+int Casa::ObtenhaNumeroDeQuartos()
+{
+	return NumQuartos;
+}
+
+bool Casa::TemSuite()
+{
+	return bTemSuite;
+}
+
+void Casa::SetNumQuartos(int Num)
+{
+	if ((Num <= 6) && (Num >= 0))
+	{
+		NumQuartos = Num;
+	}
+	else
+	{
+		std::cout << "\nNumero de Quartos Invalidos\n";
+	}
+}
